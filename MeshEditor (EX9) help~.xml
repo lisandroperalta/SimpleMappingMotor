@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="D:\VVVV\SimpleMappingMotor\MeshEditor (EX9) help.v4p" systemname="MeshEditor (EX9) help" filename="D:\VVVV\_mapping motor\MeshEditor (EX9) help.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="D:\VVVV\_mapping motor\MeshEditor (EX9) help.v4p" systemname="MeshEditor (EX9) help" filename="D:\VVVV\_mapping motor\MeshEditor (EX9) help.v4p" scrollx="0" scrolly="0">
    <BOUNDS height="10200" left="9045" top="0" type="Window" width="9795">
    </BOUNDS>
    <NODE componentmode="InAWindow" id="25" nodename="Renderer (EX9)" stayontop="0" systemname="Renderer (EX9)">
@@ -279,7 +279,7 @@
    <NODE componentmode="InAWindow" filename="%VVVV%\lib\packs\VL.EditingFramework.0.93.21-g99c25bebaf\vvvv\nodes\modules\DX9\MeshEditor (EX9).v4p" id="92" nodename="MeshEditor (EX9)" systemname="MeshEditor (EX9)">
    <BOUNDS height="270" left="1725" top="5280" type="Node" width="3030">
    </BOUNDS>
-   <BOUNDS height="10218" left="3718" top="897" type="Window" width="14872">
+   <BOUNDS height="10218" left="8216" top="4862" type="Window" width="14872">
    </BOUNDS>
    <BOUNDS height="3600" left="1725" top="5280" type="Box" width="4800">
    </BOUNDS>
@@ -295,7 +295,7 @@
    </PIN>
    <PIN pinname="Active Viewport" visible="1" slicecount="1" values="-1">
    </PIN>
-   <PIN pinname="Camera State" visible="1" slicecount="1" values="||">
+   <PIN pinname="Camera State" visible="1">
    </PIN>
    <PIN pinname="Editor Window Handle" visible="1">
    </PIN>
@@ -334,6 +334,46 @@
    </LINK>
    <LINK srcnodeid="74" srcpinname="Layer" dstnodeid="10" dstpinname="Layer 5">
    </LINK>
+   <NODE componentmode="Hidden" filename="%VVVV%\lib\packs\VL.EditingFramework.0.93.21-g99c25bebaf\vvvv\nodes\modules\Camera (Transform Softimage).v4p" id="51" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
+   <BOUNDS height="100" left="5880" top="4125" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS height="3600" left="5880" top="4125" type="Box" width="4800">
+   </BOUNDS>
+   <BOUNDS height="6000" left="16740" top="8295" type="Window" width="9000">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Initial Distance" slicecount="1" values="1.5">
+   </PIN>
+   <PIN pinname="Idle" visible="1">
+   </PIN>
+   <PIN pinname="Active Viewport" visible="1">
+   </PIN>
+   <PIN pinname="Viewport" visible="1">
+   </PIN>
+   <PIN pinname="Camera State" visible="1">
+   </PIN>
+   <PIN pinname="Initial Longitude" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Initial Latitude" slicecount="1" values="0.05">
+   </PIN>
+   <PIN pinname="Editor Window Handle" visible="1">
+   </PIN>
+   <PIN pinname="Window Handle" visible="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="25" dstpinname="View" srcnodeid="51" srcpinname="View">
+   </LINK>
+   <LINK dstnodeid="25" dstpinname="Projection" srcnodeid="51" srcpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Idle" dstnodeid="75" dstpinname="Input 2">
+   </LINK>
+   <LINK dstnodeid="92" dstpinname="View Projection" srcnodeid="51" srcpinname="View Projection">
+   </LINK>
    <NODE componentmode="Hidden" filename="%VVVV%\lib\packs\VL.EditingFramework.0.93.21-g99c25bebaf\vvvv\nodes\modules\DX9\AxisAndGrid (DX9).v4p" id="5" nodename="AxisAndGrid (DX9)" systemname="AxisAndGrid (DX9)">
    <BOUNDS height="100" left="315" top="7215" type="Node" width="100">
    </BOUNDS>
@@ -345,6 +385,8 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="10" dstpinname="Layer 1" srcnodeid="5" srcpinname="Layer">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Camera State" dstnodeid="92" dstpinname="Camera State">
    </LINK>
    <NODE systemname="Fill (EX9.RenderState)" nodename="Fill (EX9.RenderState)" componentmode="Hidden" id="93">
    <BOUNDS type="Node" left="1590" top="6645" width="100" height="100">
@@ -528,6 +570,18 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <LINK srcnodeid="25" srcpinname="Window Handle" dstnodeid="51" dstpinname="Editor Window Handle" linkstyle="Bezier">
+   <LINKPOINT x="9765" y="12420">
+   </LINKPOINT>
+   <LINKPOINT x="8295" y="3015">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Window Handle" dstnodeid="51" dstpinname="Window Handle" linkstyle="Bezier">
+   <LINKPOINT x="8490" y="11925">
+   </LINKPOINT>
+   <LINKPOINT x="9405" y="3225">
+   </LINKPOINT>
+   </LINK>
    <LINK srcnodeid="76" srcpinname="Layer" dstnodeid="10" dstpinname="Layer 3">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="104" systemname="IOBox (Value Advanced)">
@@ -549,7 +603,7 @@
    <LINK srcnodeid="89" srcpinname="Layer" dstnodeid="10" dstpinname="Layer 4">
    </LINK>
    <NODE systemname="Grid (EX9.Geometry)" nodename="Grid (EX9.Geometry)" componentmode="Hidden" id="105">
-   <BOUNDS type="Node" left="520" top="5018" width="100" height="100">
+   <BOUNDS type="Node" left="2951" top="1911" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Mesh" visible="1">
    </PIN>
@@ -582,38 +636,4 @@
    </PACK>
    <PACK Name="VVVV.Packs.Image" Version="0.2.0">
    </PACK>
-   <NODE id="108" componentmode="Hidden" filename="%VVVV%\lib\packs\VL.EditingFramework.0.93.21-g99c25bebaf\vvvv\nodes\modules\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" systemname="Camera (Transform Softimage)">
-   <BOUNDS type="Node" height="100" left="6127" top="4632" width="100">
-   </BOUNDS>
-   <BOUNDS type="Box" height="3600" left="6127" top="4632" width="4800">
-   </BOUNDS>
-   <BOUNDS type="Window" height="6000" left="16740" top="8295" width="9000">
-   </BOUNDS>
-   <PIN pinname="Initial Latitude" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Initial Distance" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="25" srcpinname="Window Handle" dstnodeid="108" dstpinname="Window Handle" linkstyle="Bezier">
-   <LINKPOINT x="8572" y="12094">
-   </LINKPOINT>
-   <LINKPOINT x="9570" y="3563">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="25" srcpinname="Window Handle" dstnodeid="108" dstpinname="Editor Window Handle" linkstyle="Bezier">
-   <LINKPOINT x="9847" y="12589">
-   </LINKPOINT>
-   <LINKPOINT x="8460" y="3353">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="108" srcpinname="Camera State" dstnodeid="92" dstpinname="Camera State">
-   </LINK>
-   <LINK srcnodeid="108" srcpinname="View Projection" dstnodeid="92" dstpinname="View Projection">
-   </LINK>
-   <LINK srcnodeid="108" srcpinname="Idle" dstnodeid="75" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="108" srcpinname="Projection" dstnodeid="25" dstpinname="Projection">
-   </LINK>
-   <LINK srcnodeid="108" srcpinname="View" dstnodeid="25" dstpinname="View">
-   </LINK>
    </PATCH>
